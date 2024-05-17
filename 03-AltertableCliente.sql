@@ -1,0 +1,1 @@
+ALTER TABLE tabelaclientes add endereco_cliente
