@@ -11,7 +11,7 @@ WHERE status = 'Pendente' OR status = 'Processando'
 --Utilizando o NOT
 SELECT *
 FROM tabelapedidos
-WHERE NOT status = 'Pendente' --VAI TRAZER OS STATUS AONDE NÃO ESTEJA PENDENDE
+WHERE NOT status = 'Pendente' --VAI TRAZER OS STATUS AONDE NÃO ESTEJA PENDENTE
 
 --Utilizadno Between(Entre)
 SELECT *
