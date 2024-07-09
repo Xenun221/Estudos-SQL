@@ -1,21 +1,20 @@
-/*
-Selecione os primeiros 5 registros da tabela clientes, ordenando-os pelo nome em ordem crescente.*/
-SELECT * 
-FROM Dependentes
-ORDER BY nome DESC
-LIMIT 5
 
-/*
-Encontre todos os produtos na tabela produtos que não têm uma descrição associada (suponha que a coluna de descrição possa ser nula).
-*/
+select *
+FROM itenspedidos
+
 SELECT *
-FROM HistoricoEmprego
-where datatermino IS NOT NULL
+FROM pedidos
 
-/*
-Liste os funcionários cujo nome começa com 'A' e termina com 's' na tabela funcionarios.
-*/
-SELECT *
-FROM Colaboradores
-WHERE nome LIKE 'A%' AND nome LIKE '%S'
+/*Calcular o valor total dos pedidos*/
+SELECT c.nome, p.id, SUM(ip.precounitario) AS 'Soma dos pedidos'
+FROM clientes c
+JOIN pedidos p
+ON c.id = p.idcliente
+JOIN itenspedidos ip
+ON p.id = ip.idpedido
+/*Precisamos utilizar o GROUP BY*/
+GROUP BY p.id, c.nome
 
+/*Juntando as tabelas de produto
+JOIN produtos pr 
+ON pr.id = ip.idprodutos*/
